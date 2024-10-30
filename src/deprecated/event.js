@@ -4,7 +4,6 @@ import "../event.js";
 import "../event/trigger.js";
 
 jQuery.fn.extend( {
-
 	bind: function( types, data, fn ) {
 		return this.on( types, null, data, fn );
 	},
@@ -24,7 +23,7 @@ jQuery.fn.extend( {
 	},
 
 	hover: function( fnOver, fnOut ) {
-		return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
+		return this.on( "mouseenter", fnOver ).on( "mouseleave", fnOut || fnOver );
 	}
 } );
 
